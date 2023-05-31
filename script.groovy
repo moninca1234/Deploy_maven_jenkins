@@ -7,7 +7,11 @@ def buildImg () {
     sh "docker build -t  $USERNAME/mavenapp:1.0 ."
     sh "$PASSWORD |  docker login -u $USERNAME --password-stdin "
     sh "docker push  $USERNAME/mavenapp:1.0"
-                
+    }           
 }
+def deployApp() {
+    echo 'deploying the application...'
+} 
+
 
 return this
